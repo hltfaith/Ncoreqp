@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sapar.css" />
+<link rel="stylesheet" type="text/css" href="../static/css/common.css" />
+<link rel="stylesheet" type="text/css" href="../static/static/ticket/css/query_order_step.css" />
+<script type="text/javascript" src="../static/js/jquery.js"></script>
+<script type="text/javascript" src="../static/js/sapar.js"></script>
+<script type="text/javascript" src="../static/js/WdatePicker.js"></script>
+<title>车票查询</title>
+</head>
+
+<body>
+    <div id="saper-container">
+        <div id="saper-hd"></div>
+        <div id="saper-bd">
+            <div class="subfiled clearfix">
+                <h2>车票查询</h2>
+            </div>
+            <div class="subfiled-content">
+                <div class="steps">
+                    <ol>
+
+                        <li class="active">
+                            <i>1</i>
+                            <span class="tsl">查询车票</span>
+                        </li>
+                        <li>
+                            <i>2</i>
+                            <span class="tsl">关注车票</span>
+                        </li>
+                        <li>
+                            <i>3</i>
+                            <span class="tsl">关注成功</span>
+                        </li>
+
+                    </ol>
+                </div>
+
+                <form name="f1" id="f1" action="/cxcp2/" method="post">
+
+                    {% csrf_token %}
+
+                    <div class="search-box clearfix">
+
+                        <div class="kv-item clearfix">
+                            <label>类型：</label>
+                            <div class="kv-item-content">
+
+                                <span class="choose">
+                                    <input type="radio" name="type" attr="dancheng" checked>
+                                    <span class="text">来一场说走就走的旅程</span>
+                                </span>
+
+                            </div>
+                        </div>
+
+                        <div class="content">
+
+                            <div class="kv-item clearfix">
+                                <label>出发城市：</label>
+                                <div class="kv-item-content">
+                                    <input type="text" name="cfcs" placeholder="出发城市">
+                                </div>
+                            </div>
+
+                            <div class="kv-item clearfix">
+                                <label>到达城市：</label>
+                                <div class="kv-item-content">
+                                    <input type="text" name="ddcs" placeholder="到达城市">
+                                </div>
+                            </div>
+
+                            <div class="kv-item clearfix">
+                                <label>出发时间：</label>
+                                <div class="kv-item-content">
+                                    <input type="text" name="cfsj" onfocus="WdatePicker({dateFmt:'yyyy-MM-dd'})" placeholder="出发时间">
+                                </div>
+                            </div>
+                            <a href="javascript:void(0)" class="search-trade" title="互换出发到达城市"></a>
+                        </div>
+
+                        {% if message %}
+                        {{ message }}
+                        {% endif %}
+
+                        <input type=submit class="sapar-btn sapar-btn-recom query-btn" value="查询"/>
+
+                    </div>
+                </form>
+
+                <div class="subfiled-style2 clearfix">
+
+                </div>
+                <div class="table-tab">
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+        <div id="saper-ft"></div>
+    </div>
+    
+</body>
+
+
+<script type="text/javascript">
+    $('form').on('click', 'input[type=radio]', function(){
+        var tpl = $(this).attr('attr') + 'tpl';
+
+        $('.content').html($('#'+ tpl ).html());
+
+    });
+
+    $('.query-btn').click(function (argument) {
+        layer.load('正在查询请稍候');
+    })
+
+   // layer.load('正在查询请稍候');
+
+</script>
+</html>

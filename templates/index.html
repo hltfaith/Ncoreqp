@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="/static/css/sapar.css" />
+<link rel="stylesheet" href="/static/static/css/index.css" />
+<link rel="stylesheet" href="/static/static/css/index_inner.css" />
+
+
+
+
+<title>Ncore 分布式抢票系统</title>
+</head>
+
+<body>
+<div id="container">
+
+	<div id="hd">
+    	<div class="hd-wrap clearfix">
+        	<div class="top-light"></div>
+            <h1 class="logo"></h1>
+            <ul class="main-nav clearfix">
+
+                <!--
+                <li data-src="ticket_index.html"><a href="javascript:;">火车票</a></li>
+                <li data-src="mail_index.html"><a href="javascript:;">邮件提醒</a></li>
+                -->
+
+                <li><a href="/index/">火车票</a></li>
+                <li><a href="/mail/">邮件提醒</a></li>
+
+            </ul>
+
+            <div class="toolbar">
+                <div class="login-info clearfix">
+                    <div class="welcome clearfix"><span></span><a href="javascript:;" class="user-name">Changhao</a></div>
+                    <div class="login-msg clearfix">
+                        <a href="javascript:;" class="msg-txt">消息</a>
+                        <a href="javascript:;" class="msg-num">10</a>
+                    </div>
+                </div>
+
+                <div class="tool clearfix">
+                    <a class="tips" href="javascript:;">合作须知</a>
+                    <a class="tips" href="javascript:;">购票协议</a>
+                    <a href="javascript:;" class="help-btn">帮助</a>
+                    <a href="javascript:;" class="quit-btn exit">退出</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    {% block content %}
+    {% endblock %}
+
+
+
+    <div id="ft" class="clearfix">
+    	<div class="ft-left">
+            <span>Ncoreqp 分布式抢票系统</span>
+            <em>Ncoreqp&nbsp;System</em> 更多科技：<a href="http://www.northcorezh.com/" target="_blank">北芯众合</a>
+        </div>
+        <div class="ft-right">
+            <span>Automation</span>
+            <em>1.0&nbsp;2019</em>
+        </div>
+    </div>
+
+</div>
+
+<div class="exitDialog">
+	<div class="dialog-content">
+    	<div class="ui-dialog-icon"></div>
+        <div class="ui-dialog-text">
+        	<p class="dialog-content">你确定要退出系统？</p>
+            <p class="tips">如果是请点击“确定”，否则点“取消”</p>
+            
+            <div class="buttons">
+                <input type="button" class="button long2 ok" value="确定" />
+                <input type="button" class="button long2 normal" value="取消" />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/sapar.js"></script>
+<script type="text/javascript" src="/static/static/js/index.js"></script>
+<script type="text/javascript" src="/static/static/js/index_inner.js"></script>
+<script type="text/javascript" src="/static/js/WdatePicker.js"></script>
+
+</html>

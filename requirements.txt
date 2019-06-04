@@ -1,0 +1,8 @@
+pycrypto
+pycryptodome
+requests
+beautifulsoup4
+lxml
+pyquery
+matplotlib==2.2.2
+pymysql

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div id="bd">
+
+        <div class="wrap clearfix">
+            <div class="sidebar">
+                <h2 class="sidebar-header"><p>功能导航</p></h2>
+                <ul class="nav">
+                    <li class="office current"><div class="nav-header"><a href="/listmail/" data-src="/listmail/" class="clearfix"><span>邮件发送列表</span><i class="icon"></i></a></div></li>
+                    <li class="gongwen"><div class="nav-header"><a href="/setmail/" data-src="/setmail/"  class="clearfix"><span>发送邮件设置</span><i class="icon"></i></a></div></li>
+                </ul>
+            </div>
+
+            <div class="content">
+                <iframe src="/listmail/" id="iframe" width="100%" height="100%" frameborder="0"></iframe>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}
+

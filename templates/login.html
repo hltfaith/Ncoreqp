@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="/static/static/css/login.css" />
+	<title>分布式抢票系统</title>
+</head>
+<body>
+	<div id="container">
+		<div id="bd">
+			<div class="login">
+                <form class="form-horizontal" action="/login/" method="post">
+
+                    {% csrf_token %} <!--post提交数据时必须要加-->
+                     <!--将表单的每个输入框包裹在一个<p>标签内 tags-->
+                    <!--<input type="submit" value="Login">-->
+
+
+                    <div class="login-top"><h1 class="logo"></h1></div>
+
+                    <div class="login-input">
+
+                        {% if message %}
+                        <div class="login-msg clearfix">
+                        <a href="javascript:;" class="msg-txt">{{ message }}</a>
+                        </div>
+                        {% endif %}
+
+                        <p class="user ue-clear">
+                            <label>用户名</label>
+                            <input type="text" name="username"/>
+                            <!--{{form.username}}-->
+                        </p>
+
+                        <p class="password ue-clear">
+                            <label>密&nbsp;&nbsp;&nbsp;码</label>
+                            <input type="password" name="password"/>
+                            <!--{{form.password}}-->
+                        </p>
+
+                    </div>
+
+                    <div class="login-btn ue-clear">
+                        <!--<a href="/index/" class="btn">登录</a>-->
+                        <input type="submit" class="btn" value="登录" />
+
+                        <div class="remember ue-clear">
+                            <input type="checkbox" id="remember" />
+                            <em></em>
+                            <label for="remember">记住密码</label>
+                        </div>
+
+                     </div>
+
+                </form>
+            </div>
+		</div>
+	</div>
+    <div id="ft">CopyRight&nbsp;2019&nbsp;&nbsp;版权所有&nbsp;&nbsp;北芯众合科技有限公司  更多信息：<a href="http://www.northocrezh.com/" target="_blank">北芯众合</a></div>
+</body>
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript">
+var height = $(window).height();
+$("#container").height(height);
+$("#bd").css("padding-top",height/2 - $("#bd").height()/2);
+
+$(window).resize(function(){
+	var height = $(window).height();
+	$("#bd").css("padding-top",$(window).height()/2 - $("#bd").height()/2);
+	$("#container").height(height);
+	
+});
+
+$('#remember').focus(function(){
+   $(this).blur();
+});
+
+$('#remember').click(function(e) {
+	checkRemember($(this));
+});
+
+function checkRemember($this){
+	if(!-[1,]){
+		 if($this.prop("checked")){
+			$this.parent().addClass('checked');
+		}else{
+			$this.parent().removeClass('checked');
+		}
+	}
+}
+</script>
+</html>

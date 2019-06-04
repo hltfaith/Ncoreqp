@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="../static/css/sapar.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/static/static/ticket/css/query_order_step.css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/sapar.js"></script>
+<script type="text/javascript" src="/static/js/WdatePicker.js"></script>
+<title>车票查询</title>
+</head>
+
+<body>
+    <div id="saper-container">
+        <div id="saper-hd"></div>
+        <div id="saper-bd">
+
+            <div class="subfiled clearfix">
+                <h2>车票查询</h2>
+            </div>
+
+            <div class="subfiled-content">
+                <div class="steps">
+                    <ol>
+                        <li>
+                            <i>1</i>
+                            <span class="tsl">查询车票</span>
+                        </li>
+                        <li class="active">
+                            <i>2</i>
+                            <span class="tsl">关注车票</span>
+                        </li>
+                        <li>
+                            <i>3</i>
+                            <span class="tsl">关注成功</span>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="subfiled-style2 clearfix">
+                    <!--<h2>重庆到南京</h2>-->
+                    <h2>{{cfcs}}到{{ddcs}}</h2>
+                </div>
+
+                <div class="table-tab">
+                    <ul class="clearfix">
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                        <li><a href="javascript:;"><span>2014-12-9</span><span>星期一</span></a></li>
+                    </ul>
+                </div>
+
+                <!--表格开始-->
+                <div class="table">
+
+                    <!--表格具体内容-->
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <!--<th>序号</th>-->
+                                    <th>车次</th>
+                                    <th>出发站-
+                                    到达站</th>
+                                    <th>出发时间-
+                                        到达时间</th>
+                                    <th>历时</th>
+                                    <th>商务座
+                                    特等座</th>
+                                    <th>一等座</th>
+                                    <th>二等座</th>
+                                    <th>高级
+                                        软卧</th>
+                                    <th>软卧
+                                    一等卧</th>
+                                    <th>动卧</th>
+                                    <th>硬卧
+                                        二等卧</th>
+                                    <th>软座</th>
+                                    <th>硬座</th>
+
+                                    <th>无座</th>
+                                </tr>
+                            </thead>
+
+
+
+                            <tbody>
+
+                                {% csrf_token %}
+
+                                {% for i in ticket %}
+
+                                            <tr>
+                                            {% for k in i %}
+
+                                                {% if forloop.counter0 >= 4 %}
+
+                                                    {% if k != "--" %}
+                                                        <td >{{k}}&nbsp;&nbsp;&nbsp;<a href="/cxcp3/?ppid={{forloop.parentloop.counter}}|{{forloop.counter0}}|{{cfcs}}|{{ddcs}}|{{cfsj}}" >关注车票</a></td>
+                                                    {% else %}
+                                                        <td>{{k}}</td>
+                                                    {%  endif %}
+
+                                                {% else %}
+                                                    <td>{{k}}</td>
+                                                {%  endif %}
+
+                                            {% endfor %}
+                                            </tr>
+
+                                {% endfor %}
+
+                                <!--<tr>-->
+                                    <!--<td>G20</td>-->
+                                    <!--<td>北京</td>-->
+                                    <!--<td>上海</td>-->
+                                    <!--<td>5:00</td>-->
+                                    <!--<td>剩余 20 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 20 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 22 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 26 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 28 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 0 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 8 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 0 张 <a href="query_order_step3.html" >关注</a></td>-->
+                                    <!--<td>剩余 1 张 <a href="query_order_step3.html" >关注</a></td>-->
+
+                                    <!--<td><a href="/cxcp3/" class="sapar-btn sapar-btn-recom query-btn">订票</a></td>-->
+                                <!--</tr>-->
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div><!--表格结束-->
+            </div>
+        </div>
+
+        <div id="saper-ft"></div>
+    </div>
+
+</body>
+
+
+<script type="text/javascript">
+
+    $('a').click(function (argument) {
+        layer.load('正在关注车票请稍候');
+    })
+
+   // layer.load('正在查询请稍候');
+
+</script>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/css/sapar.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+<link rel="stylesheet" type="text/css" href="/static/static/ticket/css/group_ticket_list.css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/sapar.js"></script>
+<script type="text/javascript" src="/static/js/WdatePicker.js"></script>
+<title>抢票列表</title>
+</head>
+
+<body>
+    <div id="saper-container">
+        <!--<div id="saper-hd"></div>-->
+        <div id="saper-bd">
+
+            <div class="subfiled clearfix">
+                <h2>火车票订单</h2>
+            </div>
+
+            <div class="subfiled-content">
+                <div class="tab-container" data-trigger="click">
+
+                    <div class="tab-content">
+
+                        <div class="tab-content-item">
+
+                            <!--表格开始-->
+                            <div class="table">
+
+                                <!--表格具体内容-->
+                                <div class="table-box">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>序号</th>
+                                                <th>列车号</th>
+                                                <th>日期</th>
+                                                <th>出发时间 - 到达时间</th>
+                                                <th>出发站 - 到达站</th>
+                                                <th>车座类型</th>
+                                                <th>创建时间</th>
+                                                <th>备注</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+                                            <!--<tr class="no-data"><td colspan="10">暂时没有数据</td></tr>-->
+
+
+                                            {% for i in data %}
+                                            <tr>
+                                                {% for k in i %}
+                                                    <td>{{k}}</td>
+                                                {% endfor %}
+                                                <td></td>
+                                            </tr>
+                                            {% endfor %}
+
+                                            <!--
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div><!--表格结束-->
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="saper-ft"></div>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+$('select').iSelect();
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=emulateIE7" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
+<link rel="stylesheet" href="/static/css/sapar.css" />
+<link rel="stylesheet" type="text/css" href="/static/css/common.css" />
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/sapar.js"></script>
+<script type="text/javascript" src="/static/js/WdatePicker.js"></script>
+<title>发送邮件设置</title>
+</head>
+
+<body>
+    <div id="saper-container">
+        <div id="saper-hd"></div>
+        <div id="saper-bd">
+            <div class="subfiled clearfix">
+                <h2>发送邮件设置</h2>
+            </div>
+            <div class="subfiled-content">
+                <form class="saper-form" action="/setmail/" method="POST">
+
+                    {% csrf_token %}
+                    <!--<div class="kv-item clearfix">-->
+                        <!--<label>接收人姓名：</label>-->
+                        <!--<div class="kv-item-content">-->
+                            <!--<input type="text" placeholder="填写接收人姓名或者选择常旅客">-->
+                            <!--<a href="javascript:;">选择常旅客</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <div class="kv-item clearfix">
+                        <label>接收邮箱：</label>
+                        <div class="kv-item-content">
+                            <input type="text" name="mailaddr" placeholder="邮箱地址">
+                        </div>
+                        <div class="kv-item-tip">示例：wu_chang_hao@qq.com</div>
+                    </div>
+
+                    <div class="kv-item clearfix">
+                        <label>邮箱内容：</label>
+                        <div class="kv-item-content">
+
+                            <textarea style="margin-top:5px;" name="messages" placeholder="发送内容：长昊你好，抢票成功。前去12306官网支付，谢谢！"></textarea>
+
+                        </div>
+                    </div>
+
+                    <!--<input type="submit" value="提交设置"/>-->
+
+                    {% if messageError %}
+                    {{ messageError }}
+                    {% endif %}
+
+                    <!--<a type="submit" class="sapar-btn sapar-btn-recom query-btn">提交设置</a>-->
+                    <input type="submit"  class="sapar-btn sapar-btn-recom query-btn" value="提交设置"/>
+                </form>
+
+            </div>
+        </div>
+        <div id="saper-ft"></div>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+$('select').iSelect();
+
+</script>
+</html>
