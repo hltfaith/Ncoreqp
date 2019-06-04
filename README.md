@@ -55,8 +55,8 @@ Mail: wu_chang_hao@qq.com
         机制： 进程3, 向服务器返回结果
 
 **changelog**
-	Tue Jun 04 2019 22:26 changhao<wu_chang_hao@qq.com>-vd1.2.9-bases1.10
-	- 内测版 bases.1.10 build-1.0
+Tue Jun 04 2019 22:26 changhao<wu_chang_hao@qq.com>-vd1.2.9-bases1.10
+- 内测版 bases.1.10 build-1.0
 
 
 **废话不多说直接上图**
