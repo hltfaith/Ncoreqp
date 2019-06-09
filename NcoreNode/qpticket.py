@@ -20,9 +20,6 @@ req.verify = False
 req.cookies['RAIL_DEVICEID'] = 'SZ2FPTOYpAD_crZicAvqbufDoFOyfyvkdmKxR0Objq-2YAKCVYpt_1GdZV-RQL2Ds9pbxvTC5BIjelu7n2LzbN8Z1GNziPGxyBSaJBSZDc_W9tPsdBzl0lSj4UaVvLc9ABnE3vAAM4RkfeEhpR7mIMkzR_L4GuUy'
 # req.cookies['RAIL_DEVICEID'] = 'QlT1A55uQG0t4g94cK8py5EJk2IBtohfOmDMkgYupazgyFGy8kYc5SsxiuZnm5hZXvyVwVXPiF-WxPF5STEkfulMlF_fHKF4yf3VDacObJnSN_AKrQYdEdJt1VtzxoRPmA_sgb5KZRUkBI6jqq0l_a9Rhd14bvMJ'
 
-username = '1521054567@qq.com'
-password = 'changhao1213'
-
 proxies = {
             # 'http': '116.196.90.176:3128',
             'https': '178.143.191.155:8080'
@@ -34,8 +31,6 @@ class Login(object):
     '''登录模块'''
 
     def __init__(self):
-        self.username = '1521054567@qq.com'
-        self.password = 'changhao1213'
         self.url_pic = 'https://kyfw.12306.cn/passport/captcha/captcha-image?login_site=E&module=login&rand=sjrand&0.15905700266966694'
         self.url_check = 'https://kyfw.12306.cn/passport/captcha/captcha-check'
         self.url_login = 'https://kyfw.12306.cn/passport/web/login'
